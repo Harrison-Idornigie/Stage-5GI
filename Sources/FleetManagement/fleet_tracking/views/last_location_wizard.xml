@@ -1,0 +1,41 @@
+<odoo>
+
+    <record model="ir.ui.view" id="last_location_wizard_view">
+        <field name="name">last_location_wizard.form</field>
+        <field name="model">fleet_tracking.last_location_wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false">
+                <div id="vec1" style="display: none">
+                    <field name="vehicle_id_value" />
+                </div>
+                <div id="vec2" style="display: none">
+                    <field name="vehicle_latitude" />
+                </div>
+                <div id="vec3" style="display: none">
+                    <field name="vehicle_longitude" />
+                </div>
+
+                <script type="text/javascript" >
+                    var vehicle_id = document.getElementById('vec1').innerText;
+                    var vehicle_latitude = parseFloat(document.getElementById('vec2').innerText);
+                    var vehicle_longitude = parseFloat(document.getElementById('vec3').innerText);
+
+                    console.log(vehicle_id);
+                    console.log(vehicle_latitude);
+                    console.log(vehicle_longitude);
+
+                    initMap("map_last_loc", {lat: vehicle_latitude, lng: vehicle_longitude});
+                    var marker = L.marker([vehicle_latitude, vehicle_longitude]).addTo(macarte);
+                </script>
+
+                <div id="map_last_loc" style="height: 450px; width: 100%"></div>
+                <br/>
+                <footer>
+                    <button string="Fermer" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

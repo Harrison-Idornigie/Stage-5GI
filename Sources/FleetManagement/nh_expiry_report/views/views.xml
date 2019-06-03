@@ -1,0 +1,54 @@
+<odoo>
+    <record model="ir.ui.view" id="wizard_form_view">
+        <field name="name">wizard.form</field>
+        <field name="model">nh_expiry_report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="branch_ids" widget="many2many_tags"/>
+                            <field name="warehouse_ids" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="location_ids" widget="many2many_tags" atrrs="{'domain' : ['!', ('usage', 'in', ('customer, supplier'))]}"/>
+                            <field name="delay"/>
+                            <field name="state" invisible="1"/>
+                            <field name = 'name' invisible = '1'/>
+                        </group>
+                    </group>
+                </sheet>
+                <div states = 'get'>
+                    <h2> Exportation finished </h2>
+                    <p> Download options : <field name = 'file' readonly = '1' filename= 'name'/></p>
+                </div>
+                <footer states = 'choose'>
+                    <button name="generate_excel" string="Export to EXCEL" type="object" class="oe_highlight"/>
+                    <button name="print_pdf" type="object" string="Export to PDF" class="oe_highlight"/>
+                    or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+                <footer states = 'get'>
+                    <button name="generate_excel" string="Export to EXCEL" type="object" class="oe_highlight"/>
+                    <button name="print_pdf" type="object" string="Export to PDF" class="oe_highlight"/>
+                    or
+                    <button string="Close" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="launch_report_wizard" model="ir.actions.act_window">
+        <field name="name">Nearly Expiry Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">nh_expiry_report.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="wizard" name="Nearly Expiry Report"
+              parent="stock.menu_warehouse_report"
+              action="launch_report_wizard"/>
+</odoo>

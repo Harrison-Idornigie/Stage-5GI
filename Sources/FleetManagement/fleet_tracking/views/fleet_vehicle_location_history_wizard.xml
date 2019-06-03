@@ -1,0 +1,42 @@
+<odoo>
+    <record model="ir.ui.view" id="vehicle_location_history_wizard">
+        <field name="name">fleet.vehicle.location.history.wizard.form</field>
+        <field name="model">fleet_tracking.fleet_history_wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                    <group>
+                         <field name="vehicle_ids"/>
+                    </group>
+                    <footer>
+                        <button name="display_history" string="Get History" type="object" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vehicle_location_history_wizard" model="ir.actions.act_window">
+        <field name="name">Vehicle Location History</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">fleet_tracking.fleet_history_wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="vehicle_location_history_wizard"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+            name="Vehicle Location History"
+            action="action_vehicle_location_history_wizard"
+            id="menu_vehicle_location_history"
+            parent="fleet.fleet_vehicles"
+            sequence="15"
+    />
+
+</odoo>

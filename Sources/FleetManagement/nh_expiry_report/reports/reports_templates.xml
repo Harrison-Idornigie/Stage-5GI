@@ -1,0 +1,123 @@
+<odoo>
+
+    <template id="report">
+
+            <t t-call="nh_expiry_report.external_layout_move">
+                 <style>
+                            .header_table{
+                                width:500px;
+                            }
+                            .header_table th{
+                                padding:5px;
+                                text-align:center;
+                                border:1px solid black;
+                                background:#c8cace;
+                                width :100px;
+                            }
+                            .header_table td{
+                                padding:5px;
+                                text-align:center;
+                                border:1px solid black;
+                                width :100px;
+                            }
+                            .my_table{
+                                width:100%;
+                            }
+                            .my_table th{
+                                padding:5px;
+                                border-bottom:1px solid #000;
+                            }
+                            .my_table td{
+                                padding:5px;
+                                border-bottom:1px solid #efefef;
+                            }
+                         .body_space{
+                                padding:100x;
+
+                            }
+                        </style>
+                <div class="page"  style="font-size:12px;color:#000">
+                    <div class="row">
+                    <div align="center">
+                        <u><h3>NEARLY EXPIRY REPORT</h3></u>
+                    </div>
+                    <table border="0" width="100%" style="margin-top: 30px; margin-bottom: 30px;">
+                        <tbody>
+                            <tr>
+                                <td><div align="center"><b>Delay</b> : <span t-esc="delay"/> DAYS</div></td>
+                            </tr>
+                            <tr>
+                                <td><div align="center"><b>Made At</b> : <span t-esc="made_at"/></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <t t-foreach="result" t-as="br">
+                        <h3>
+                           Branch :  <span t-esc="br['branch']"/>
+                        </h3>
+                        <t t-foreach="br['warehouses']" t-as="wh">
+                            <h4>
+                               Warehouse :  <span t-esc="wh['warehouse']"/>
+                            </h4>
+                            <t t-foreach="wh['locations']" t-as="loc">
+                                <h5>
+                                    <b>Location</b> :  <span t-esc="loc['location']"/>
+                                </h5>
+                                <div class="row mt32 mb32"/>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <table class="my_table">
+                                <thead>
+                                    <tr>
+                                        <th style="background:#d6d6d6;width:5%;">Code</th>
+                                        <th style="background:#d6d6d6;width:10%;">Name</th>
+                                        <th style="background:#d6d6d6;width:10%;">Serial Number</th>
+                                        <th style="background:#d6d6d6;width:10%;">Unit Value</th>
+                                        <th style="background:#d6d6d6;width:10%;">Block Location</th>
+                                        <th style="background:#d6d6d6;width:5%;">Quantity</th>
+                                        <th style="background:#d6d6d6;width:10%;">Unit of Measure</th>
+                                        <th style="background:#d6d6d6;width:10%;">Total Value</th>
+                                        <th style="background:#d6d6d6;width:10%;">State</th>
+                                        <th style="background:#d6d6d6;width:10%;">Life Date</th>
+                                        <th style="background:#d6d6d6;width:10%;">Days before Expiry</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="loc['location_quants']" t-as="stock_quant">
+                                        <td><span t-esc="stock_quant['code_article']"/></td>
+                                        <td><span t-esc="stock_quant['name_article']"/></td>
+                                        <td><span t-esc="stock_quant['serial_number']"/></td>
+                                        <td><span t-esc="stock_quant['unite_value']"/></td>
+                                        <td><span t-esc="stock_quant['location']"/></td>
+                                        <td><span t-esc="stock_quant['qty']"/></td>
+                                        <td><span t-esc="stock_quant['uom']"/></td>
+                                        <td><div align="right"><span t-esc="stock_quant['total_value']"/></div></td>
+                                        <t t-if="stock_quant['state']">
+                                            <td style="background-color: red;">périmé (expired)</td>
+                                        </t>
+                                        <t t-else="">
+                                            <td style="background-color: orange;">critique (critical)</td>
+                                        </t>
+                                        <td><span t-esc="stock_quant['life_date']"/></td>
+                                        <td><span t-esc="stock_quant['days_to_expiry']"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7" style="margin-top:5px;"><b>TOTAL</b></td>
+                                        <td style="margin-top:5px;"><div align="right"><span t-esc="loc['total']"/></div></td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                                    </div>
+                                </div>
+                                 <p style="page-break-before:always;"> </p>
+
+                            </t>
+                        </t>
+                    </t>
+                </div>
+                </div>
+            </t>
+
+    </template>
+</odoo>

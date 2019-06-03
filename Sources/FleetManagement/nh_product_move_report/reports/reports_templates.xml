@@ -1,0 +1,106 @@
+<odoo>
+
+    <template id="report">
+        <t t-call="web.html_container">
+            <t t-call="nh_product_move_report.external_layout_move">
+                <div class="page">
+                    <style>
+                        .header_table{
+                            width:100%;
+                        }
+                        .header_table th{
+                            padding:5px;
+                            text-align:center;
+                            border:1px solid black;
+                            background:#c8cace;
+                            width :100px;
+                            margin-bottom: 20px;
+                        }
+                        .header_table td{
+                            padding:5px;
+                            text-align:center;
+                            border:1px solid black;
+                            width :100px;
+                        }
+                        .my_table{
+                            width:100%;
+                        }
+                        .my_table th{
+                            padding:5px;
+                            border-bottom:1px solid #000;
+                        }
+                        .my_table td{
+                            padding:5px;
+                            border-bottom:1px solid #efefef;
+                        }
+                    </style>
+                    <div align="center">
+                        <u><h3>STOCK LEDGER</h3></u>
+                        From <span t-esc="start_date"/> To <span t-esc="end_date"/>
+                    </div>
+                    <table border="0" width="100%" style="margin-top: 30px; margin-bottom: 30px;">
+                        <tbody>
+                            <tr>
+                                <td><b>Branch</b> : <span t-esc="branch"/></td>
+                                <td><b>Product name</b> : <span t-esc="product_name"/></td>
+                                <td><b>Unity of Measure</b> : <span t-esc="uom"/></td>
+                            </tr>
+                            <tr>
+                                <td><b>Warehouse</b> : <span t-esc="warehouse"/></td>
+                                <td><b>Category</b> : <span t-esc="category"/></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <t t-foreach="group_moves" t-as="group">
+                        <h4>
+                            <b>Location</b> :  <span t-esc="group['location']"/>
+                        </h4>
+                        <table class="header_table">
+                            <thead>
+                                <tr>
+                                    <th style="width:9.5%;">Date</th>
+                                    <th style="width:9.5%;">Reference</th>
+                                    <th style="width:9.5%;">Source</th>
+                                    <th style="width:9.5%;">Destination</th>
+                                    <th style="width:9.5%;">Partner</th>
+                                    <th style="width:9.5%;">Lot Number</th>
+                                    <th style="width:9.5%;">Life Date</th>
+                                    <th style="width:9.5%;">Inward</th>
+                                    <th style="width:9.5%;">Outward</th>
+                                    <th style="width:9.5%;">Running Balance</th>
+                                    <th style="width:5%;">Observation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="9" style="margin-top:5px;"><b>Initial Quantity</b></td>
+                                    <td style="margin-top:5px;"><div align="right"><span t-esc="group['initial_qty']"/></div></td>
+                                    <td></td>
+                                </tr>
+                                <tr t-foreach="group['location_moves']" t-as="move">
+                                    <td><span t-esc="move['date']"/></td>
+                                    <td><span t-esc="move['reference']"/></td>
+                                    <td><span t-esc="move['provenance']"/></td>
+                                    <td><span t-esc="move['destination']"/></td>
+                                    <td><span t-esc="move['partner']"/></td>
+                                    <td><span t-esc="move['lot_number']"/></td>
+                                    <td><span t-esc="move['life_date']"/></td>
+                                    <td style="width:9.5%;"><div align="right"><span t-esc="move['inward']"/></div></td>
+                                    <td style="width:9.5%;"><div align="right"><span t-esc="move['outward']"/></div></td>
+                                    <td style="width:9.5%;"><div align="right"><span t-esc="move['running_balance']"/></div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9" style="margin-top:5px;"><b>Final Quantity</b></td>
+                                    <td style="margin-top:5px;"><div align="right"><span t-esc="group['final_qty']"/></div></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

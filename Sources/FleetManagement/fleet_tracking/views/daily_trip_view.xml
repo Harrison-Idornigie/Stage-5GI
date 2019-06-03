@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="daily_trip_map_view" model="ir.ui.view">
+        <field name="name">daily_trip.map</field>
+        <field name="model">fleet_tracking.daily_trip_map</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form style="width: 100% !important; height: 100% !important;">
+                <div id="positions" style="display: none">
+                    <field name="positions" />
+                </div>
+                <div id="map_daily"  style="height: 450px; width: 100%"></div>
+                <script type="text/javascript" >
+                    vec_positions = JSON.parse(document.getElementById('positions').innerText)
+                    console.log(vec_positions)
+                    centerPoint={lat: 3.928845, lng: 11.579612}
+                    initMap("map_daily", centerPoint);
+                    allMarkers = []
+
+                    var pointList = []
+                    vec_positions.forEach(function fuc_positions(position, index_pos){
+                        temp = new L.LatLng(position.latitude, position.longitude)
+                        pointList.push(temp)
+                        allMarkers.push([position.latitude, position.longitude])
+                    });
+                    if (pointList.length){
+                        var polyline = new L.Polyline(pointList, {
+                            color: 'red',
+                            weight: 6,
+                            opacity: 1,
+                            smoothFactor: 1
+                        });
+                        polyline.addTo(macarte);
+                    }
+                    if (allMarkers.length){
+                        macarte.fitBounds(allMarkers);
+                    }
+                </script>
+                <footer>
+                    <button string="Fermer" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

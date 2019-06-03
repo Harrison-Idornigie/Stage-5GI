@@ -1,0 +1,303 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* nh_product_move_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-26 09:01+0000\n"
+"PO-Revision-Date: 2019-02-26 09:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Category</b> :"
+msgstr "<b>Category</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Final Quantity</b>"
+msgstr "<b>Final Quantity</b>"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Initial Quantity</b>"
+msgstr "<b>Initial Quantity</b>"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Location</b> :"
+msgstr "<b>Location</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Product name</b> :"
+msgstr "<b>Product name</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Branch</b> :"
+msgstr "<b>Branch</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Unity of Measure</b> :"
+msgstr "<b>Unity of Measure</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "<b>Warehouse</b> :"
+msgstr "<b>Warehouse</b> :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Close"
+msgstr "Close"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Date"
+msgstr "Date "
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Destination"
+msgstr "Destination"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_display_name
+#: model:ir.model.fields,field_description:nh_product_move_report.field_report_nh_product_move_report_report_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Download options :"
+msgstr "Download options :"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.external_layout
+msgid "Email:"
+msgstr "Email:"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_end_date
+msgid "End Date"
+msgstr "End Date"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Export to EXCEL"
+msgstr "Export to EXCEL"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Export to PDF"
+msgstr "Export to PDF"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "Exportation finished"
+msgstr "Exportation finished"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_file
+msgid "File"
+msgstr "File"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_name
+msgid "File name"
+msgstr "File name"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "From"
+msgstr "From"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_id
+#: model:ir.model.fields,field_description:nh_product_move_report.field_report_nh_product_move_report_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_include_virtual_locs
+msgid "Include Virtual Locations"
+msgstr "Include Virtual Locations"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Inward"
+msgstr "Inward"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard___last_update
+#: model:ir.model.fields,field_description:nh_product_move_report.field_report_nh_product_move_report_report___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Life Date"
+msgstr "Life Date"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_location_ids
+msgid "Locations"
+msgstr "Locations"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Lot Number"
+msgstr "Lot Number"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Observation"
+msgstr "Observation"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Outward"
+msgstr "Outward"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.external_layout
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Partner"
+msgstr "Partner"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.external_layout
+msgid "Phone:"
+msgstr "Phone:"
+
+#. module: nh_product_move_report
+#: model:ir.actions.report,name:nh_product_move_report.action_report
+msgid "Print Report"
+msgstr "Print Report"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_product_id
+msgid "Product"
+msgstr "Product"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Reference"
+msgstr "Reference"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Running Balance"
+msgstr "Running Balance"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "STOCK LEDGER"
+msgstr "STOCK LEDGER"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "Source"
+msgstr "Source"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_start_date
+msgid "Start Date"
+msgstr "Start Date"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_state
+msgid "State"
+msgstr "State"
+
+#. module: nh_product_move_report
+#: model:ir.actions.act_window,name:nh_product_move_report.launch_report_wizard
+#: model:ir.ui.menu,name:nh_product_move_report.wizard
+msgid "Stock Ledger"
+msgstr "Stock Ledger"
+
+#. module: nh_product_move_report
+#: code:addons/nh_product_move_report/models/models.py:236
+#, python-format
+msgid "The Start Date should be lower or equal to the End Date"
+msgstr "The Start Date should be lower or equal to the End Date"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.report
+msgid "To"
+msgstr "To"
+
+#. module: nh_product_move_report
+#: model:ir.model.fields,field_description:nh_product_move_report.field_nh_product_move_report_wizard_warehouse_id
+msgid "Warehouse"
+msgstr "Warehouse"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.external_layout
+msgid "Web:"
+msgstr "Web:"
+
+#. module: nh_product_move_report
+#: selection:nh_product_move_report.wizard,state:0
+msgid "choose"
+msgstr "choose"
+
+#. module: nh_product_move_report
+#: selection:nh_product_move_report.wizard,state:0
+msgid "get"
+msgstr "get"
+
+#. module: nh_product_move_report
+#: model:ir.model,name:nh_product_move_report.model_nh_product_move_report_wizard
+msgid "nh_product_move_report.wizard"
+msgstr "nh_product_move_report.wizard"
+
+#. module: nh_product_move_report
+#: model:ir.ui.view,arch_db:nh_product_move_report.wizard_form_view
+msgid "or"
+msgstr "or"
+
+#. module: nh_product_move_report
+#: model:ir.model,name:nh_product_move_report.model_report_nh_product_move_report_report
+msgid "report.nh_product_move_report.report"
+msgstr "report.nh_product_move_report.report"

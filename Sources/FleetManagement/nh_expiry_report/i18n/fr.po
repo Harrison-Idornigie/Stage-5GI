@@ -1,0 +1,282 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* nh_expiry_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0e+e-20180216\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-04 16:45+0000\n"
+"PO-Revision-Date: 2019-03-04 16:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>Branch</b> :"
+msgstr "<b>Branche</b> :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>Delay</b> :"
+msgstr "<b>Delaie</b> :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>Location</b> :"
+msgstr "<b>Emplacement</b> :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>Made At</b> :"
+msgstr "<b>Fait le</b> :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>TOTAL</b>"
+msgstr "<b>TOTAL</b>"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "<b>Warehouse</b> :"
+msgstr "<b>Entrepot</b> :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Block Location"
+msgstr "Localisation"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_branch_ids
+msgid "Branch"
+msgstr "Branche"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Close"
+msgstr "Fermer"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Code"
+msgstr "Code"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "DAYS"
+msgstr "JOURS"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Days before Expiry"
+msgstr "Nombre de Jours avant peremption"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_delay
+msgid "Delay in days"
+msgstr "Delaie en jours"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_display_name
+#: model:ir.model.fields,field_description:nh_expiry_report.field_report_nh_expiry_report_report_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Download options :"
+msgstr "Options de téléchargement :"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.external_layout
+msgid "Email:"
+msgstr "Email:"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Export to EXCEL"
+msgstr "Exporter en EXCEL"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Export to PDF"
+msgstr "Exporter en PDF"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "Exportation finished"
+msgstr "Exportation terminée"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_file
+msgid "File"
+msgstr "File"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_name
+msgid "File name"
+msgstr "File name"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_id
+#: model:ir.model.fields,field_description:nh_expiry_report.field_report_nh_expiry_report_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard___last_update
+#: model:ir.model.fields,field_description:nh_expiry_report.field_report_nh_expiry_report_report___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Life Date"
+msgstr "Date de péremption"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_location_ids
+msgid "Locations"
+msgstr "Emplacements"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "NEARLY EXPIRY REPORT"
+msgstr "RAPPORT DES PERIMES"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Name"
+msgstr "Name"
+
+#. module: nh_expiry_report
+#: model:ir.actions.act_window,name:nh_expiry_report.launch_report_wizard
+#: model:ir.ui.menu,name:nh_expiry_report.wizard
+msgid "Nearly Expiry Report"
+msgstr "Rapport des périmés"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.external_layout
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.external_layout
+msgid "Phone:"
+msgstr "Phone:"
+
+#. module: nh_expiry_report
+#: model:ir.actions.report,name:nh_expiry_report.action_report
+msgid "Print Report"
+msgstr "Print Report"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Serial Number"
+msgstr "Numéro de Série"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_state
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "State"
+msgstr "State"
+
+#. module: nh_expiry_report
+#: code:addons/nh_expiry_report/models/models.py:58
+#, python-format
+msgid "The delay should be greater than 0"
+msgstr "Le delaie doit être plus supérieure ou égal à 0"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Total Value"
+msgstr "Valeur Totale"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Unit Value"
+msgstr "Valeur Unitaire"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "Unit of Measure"
+msgstr "Unité de Mesure"
+
+#. module: nh_expiry_report
+#: model:ir.model.fields,field_description:nh_expiry_report.field_nh_expiry_report_wizard_warehouse_ids
+msgid "Warehouse"
+msgstr "Entrepot"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.external_layout
+msgid "Web:"
+msgstr "Web:"
+
+#. module: nh_expiry_report
+#: selection:nh_expiry_report.wizard,state:0
+msgid "choose"
+msgstr "choose"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "critique (critical)"
+msgstr "critique (critical)"
+
+#. module: nh_expiry_report
+#: selection:nh_expiry_report.wizard,state:0
+msgid "get"
+msgstr "get"
+
+#. module: nh_expiry_report
+#: model:ir.model,name:nh_expiry_report.model_nh_expiry_report_wizard
+msgid "nh_expiry_report.wizard"
+msgstr "nh_expiry_report.wizard"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.wizard_form_view
+msgid "or"
+msgstr "ur"
+
+#. module: nh_expiry_report
+#: model:ir.ui.view,arch_db:nh_expiry_report.report
+msgid "périmé (expired)"
+msgstr "périmé (expired)"
+
+#. module: nh_expiry_report
+#: model:ir.model,name:nh_expiry_report.model_report_nh_expiry_report_report
+msgid "report.nh_expiry_report.report"
+msgstr "report.nh_expiry_report.report"

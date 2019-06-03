@@ -1,0 +1,58 @@
+<odoo>
+    <template id="report">
+        <t t-call="web.html_container">
+            <t t-call="nh_analytic_report.external_layout_move">
+                <div class="page">
+                    <style>
+                        .header_table{
+                            width:100%;
+                        }
+                        .header_table th{
+                            padding:5px;
+                            text-align:center;
+                            border:1px solid black;
+                            background:#c8cace;
+                            width :100px;
+                        }
+                        .header_table td{
+                            padding:0px !important;
+                            text-align:center;
+                            border:1px solid black;
+                            width :100px;
+                        }
+                    </style>
+                    <div align="center; margin-bottom: 5px;">
+                        <u><h3>ANALYTIC BALANCE</h3></u>
+                        From <span t-esc="start_date"/> To <span t-esc="end_date"/>
+                    </div>
+                    <table class="header_table">
+                        <thead>
+                            <tr>
+                                <th style="width:20%;"></th>
+                                <th style="width:20%;">Date</th>
+                                <th style="width:20%;">Description</th>
+                                <th style="width:20%;">General Account</th>
+                                <th style="width:20%;">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="analytics" t-as="analytic">
+                                <tr>
+                                    <td colspan="4"><span t-esc="analytic['name']"/></td>
+                                    <td><span t-esc="analytic['balance']"/></td>
+                                </tr>
+                                <tr t-foreach="analytic['lines']" t-as="line">
+                                    <td style="border-style: none;"></td>
+                                    <td><span t-esc="line['date']"/></td>
+                                    <td><span t-esc="line['description']"/></td>
+                                    <td><center><span t-esc="line['general_account']"/></center></td>
+                                    <td><span t-esc="line['amount']"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

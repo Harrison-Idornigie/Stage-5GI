@@ -1,0 +1,11 @@
+<odoo>
+    <report
+        id="action_report"
+        string="Report_Analytic_Balance"
+        model="account.analytic.account"
+        report_type="qweb-pdf"
+        name="nh_analytic_report.report"
+        file="nh_analytic_report.report"
+        menu="False"
+    />
+</odoo>

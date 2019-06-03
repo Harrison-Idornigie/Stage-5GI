@@ -1,0 +1,3 @@
+* mvn clean install
+* java -jar target/tracker-server.jar debug.xml
+* taper l'url dans le navigateur

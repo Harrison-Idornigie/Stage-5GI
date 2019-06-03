@@ -1,0 +1,15 @@
+**********************	For pgAdmin  ******************************
+
+- https://linuxhint.com/install-pgadmin4-ubuntu/
+
+
+
+**********************	Templates Odoo Themes  ******************************
+
+- https://gitlab.com/73lines73/my-awesome-themes/tree/11.0
+
+
+**********************	Build an Odoo theme  ******************************
+
+- https://odoo-master.readthedocs.io/en/latest/howtos/themes.html
+- https://docs.huihoo.com/odoo/training/reference-material/odoo-create-themes-for-website.pdf

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fleet_vehicle_location_history_map" model="ir.ui.view">
+        <field name="name">fleet.vehicle.location.history.map</field>
+        <field name="model">fleet_tracking.fleet_history_map</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form style="width: 100% !important; height: 100% !important;">
+                <div id="positions" style="display: none">
+                    <field name="positions" />
+                </div>
+                <div id="map_history" style="height: 100px; width: 100%;  position: relative !important;"></div>
+                <script type="text/javascript" >
+                    map = document.getElementById('map_history')
+                    form_view = map.parentNode
+                    parent = form_view.parentNode
+                    height = parent.clientHeight
+
+                    form_view.style.padding = "0px"
+                    form_view.style.height = height + "px"
+                    map.style.height = height + "px"
+
+                    vec_positions = JSON.parse(document.getElementById('positions').innerText)
+                    console.log(vec_positions)
+                    centerPoint={lat: 3.928845, lng: 11.579612}
+                    initMap("map_history", centerPoint);
+                    allMarkers = []
+
+                    vec_positions.forEach(function func_vec(vehicle, index_vec){
+                        var pointList = new Array()
+                        vehicle.positions.forEach(function fuc_positions(position, index_pos){
+                            temp = new L.LatLng(position.latitude, position.longitude)
+                            pointList.push(temp)
+                            allMarkers.push([position.latitude, position.longitude])
+                        });
+                        if (pointList.length){
+                            var polyline = new L.Polyline(pointList, {
+                                color: genColor(),
+                                weight: 6,
+                                opacity: 1,
+                                smoothFactor: 1
+                            }).bindPopup(vehicle.name+""+vehicle.drivername);
+                            polyline.addTo(macarte);
+                        }
+                    });
+                    if (allMarkers.length){
+                        macarte.fitBounds(allMarkers);
+                    }
+                </script>
+            </form>
+        </field>
+    </record>
+
+</odoo>

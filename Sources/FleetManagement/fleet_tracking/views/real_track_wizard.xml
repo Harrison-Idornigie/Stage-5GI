@@ -1,0 +1,99 @@
+<odoo>
+
+    <record model="ir.ui.view" id="real_track_wizard_view">
+        <field name="name">real_track_wizard.form</field>
+        <field name="model">fleet_tracking.real_track_wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false">
+                <div id="vec1" style="display: none">
+                    <field name="vehicle_id_value" />
+                </div>
+                <div id="vec2" style="display: none">
+                    <field name="url_traccar_server" />
+                </div>
+                <div id="vec3" style="display: none">
+                    <field name="traccar_device_id" />
+                </div>
+                <div id="vec4" style="display: none">
+                    <field name="last_latitude" />
+                </div>
+                <div id="vec5" style="display: none">
+                    <field name="last_longitude" />
+                </div>
+
+                <script type="text/javascript" >
+                    var vehicle_id = document.getElementById('vec1').innerText;
+                    var url_traccar_server = document.getElementById('vec2').innerText
+                    var traccar_device_id = document.getElementById('vec3').innerText
+                    var last_latitude = parseFloat(document.getElementById('vec4').innerText)
+                    var last_longitude = parseFloat(document.getElementById('vec5').innerText)
+
+                    console.log(vehicle_id);
+                    console.log(url_traccar_server);
+                    console.log(traccar_device_id);
+
+                    centerPoint={lat: 3.928845, lng: 11.579612}
+
+                    map = document.getElementById('map_real_track')
+                    form_view = map.parentNode
+                    parent = form_view.parentNode
+                    height = parent.clientHeight
+
+                    form_view.style.padding = "0px"
+                    form_view.style.height = height + "px"
+                    map.style.height = height + "px"
+                    initMap("map_real_track", centerPoint);
+
+                    var socket = null;
+                    $.ajax({
+                        url: url_traccar_server+"/api/session",
+                        dataType: "json",
+                        type: "POST",
+                        data: {
+                            email: "admin",
+                            password: "admin"
+                        },
+                        success: function(sessionResponse){
+                            console.log(sessionResponse);
+                            socket = createWebSocket(url_traccar_server);
+                            var marker = null;
+
+                            socket.onerror = function(error) {
+                                console.log("erreur 2")
+                                console.error(error);
+                            };
+
+                            socket.onopen = function(event) {
+                                console.log("Connexion établie.");
+                                marker = L.marker([last_latitude, last_longitude]).addTo(macarte);
+                            };
+
+                            socket.onclose = function(event) {
+                                console.log("Connexion terminé.");
+                            };
+
+                            socket.onmessage = function(event) {
+                                datas = JSON.parse(event.data);
+                                console.log("Message:", datas);
+                                if (datas.positions){
+                                    position = (datas.positions)[0]
+                                    if(position.deviceId == traccar_device_id){
+                                        newLatLng = new L.LatLng(position.latitude, position.longitude);
+                                        marker.setLatLng(newLatLng);
+                                    }
+                                }
+                            };
+                        }
+                    });
+
+                </script>
+                <div id="map_real_track" style="height: 450px; width: 100%"></div>
+                <!--footer>
+                    <button string="Fermer" class="btn-default" special="cancel"/>
+                </footer-->
+            </form>
+        </field>
+    </record>
+
+</odoo>
