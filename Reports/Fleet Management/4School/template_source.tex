@@ -1,0 +1,188 @@
+% !TEX root = ../main.tex
+
+\chapter{Introduction}
+\label{cp:introduction}
+
+\fncydesc{Copyright notice}{This document and the figures therein are licensed under the Creative Common BY-SA 4.0 Licence.}
+
+This document is suitable for academic reports. You can always replace the logo of Massey University with that of yours. If you can, try to find or create a vectorised graphic for the logo. Vectorised logos of 8 universities in NZ plus Unitec, as well as the method for extracting the logo of other universities are provided here:
+
+\verb|https://www.io.ac.nz/blog/nz-uni-logos-vector/|.
+
+Some useful Latex tips and tricks are given below.
+
+\section{Citation}
+You can cite like this:
+
+\begin{itemize}
+  \item ``\verb|\cite{Einstein1905}|'' gives you \cite{Einstein1905} for a single citation
+  \item ``\verb|\cite{Goossens1993,Knuth2000}|'' gives you \cite{Goossens1993,Knuth2000} for multiple citation
+  \item ``\verb|\cite[Pg. 42]{Einstein1905}|'' gives you \cite[Pg. 42]{Einstein1905} for extra information such as page number (quite useful if you are citing a whole book or a long paper)
+\end{itemize}
+
+\section{Equation}
+
+\subsection{One equation without number}
+This is an equation without numbering. You cannot reference it.
+\begin{equation*}
+a = b
+\end{equation*}
+
+\subsection{One equation with number}
+Equation \ref{eq:eq1} is the same equation with numbering, so you can reference it as usual.
+\begin{equation}
+a = b
+\label{eq:eq1}
+\end{equation}
+
+Eq \ref{eq:eq3} is a case equation.
+\begin{equation}
+f(n) = 
+\begin{dcases}
+a & \text{if } \quad 0 < n\\
+b & \text{if } \quad n = 0 \\
+c & \text{if } \quad 0 < n \le p \\
+d & \text{if } \quad n > p
+\end{dcases}
+\label{eq:eq3}
+\end{equation}
+%
+\subsection{Multiple equations without number}
+This is a set of equation, aligned by the equal sign (=). No reference
+\begin{equation*}
+\begin{aligned}
+a &= b \\
+c &= d
+\end{aligned}
+\end{equation*}
+%
+\subsection{Multiple equations with one number}
+\ref{eq:eq2} is the same set of equation with one single equation number for the whole set.
+\begin{equation}
+\begin{aligned}
+a &= b \\
+c &= d
+\end{aligned}
+\label{eq:eq2}
+\end{equation}
+
+\subsection{Multiple equations with one number each equation}
+\ref{eq:eq4} is a set of equations, each assigned an equation number. You can reference them directly like this: \ref{eq:eq4a} and \ref{eq:eq4b}
+\begin{subequations}
+  \begin{align}
+  a &= b \label{eq:eq4a} \\
+  c &= d \label{eq:eq4b}
+  \end{align}
+  \label{eq:eq4}
+\end{subequations}
+
+\subsection{Remove number from one equation in the set}
+If you want to omit the number for any particular equation, end it with \verb|\nonumber|. Now only Eq. \ref{eq:eq6} has a number while the one before it does not.
+\begin{align}
+a &= b \nonumber\\
+c &= d \label{eq:eq6}
+\end{align}
+
+\section{Useful shortcuts}
+\subsection{Todo list}
+This is how you insert a to do item:
+\tudu{To do: convert the code in Code Block \ref{code:helloword-in-c} to Java}
+
+\subsection{Missing figure}
+Figure \ref{fig:missing-figure} is a missing figure.
+\begin{figure}[!h]
+  \misfig{Missing figure}
+  \caption[Missing figure 1]{This is to remind you to insert an actual figure here before submitting this report}
+  \label{fig:missing-figure}  
+\end{figure}
+
+\subsection{Direct quote}
+And here is a direct quote:
+\begin{fancyquote}
+  There are many people who feel that it is useless and futile to continue talking about peace and non-violence against a government whose only reply is savage attacks on an unarmed and defenseless people.
+  
+  \raggedleft\textit{Nelson Mandela}
+\end{fancyquote}
+
+\subsection{Definition}
+A definition:
+\fncydesc{Integration}{The process of finding a function, given its derivative, is called anti-differentiation (or integration). If $F'(x) = f(x)$, we say $F(x)$ is an anti-derivative of $f(x)$.}
+
+
+\section{Figures}
+\subsection{Code block}
+Code block \ref{code:helloword-in-c} shows the Hello World example written in C. You can set different colour scheme for comments, keywords and strings in setup.tex.
+
+\lstset{language=C,caption={Hello world in C},label=code:helloword-in-c}
+\begin{lstlisting}
+#include <stdio.h>
+#define N 10
+/* Block
+* comment */
+
+int main() {
+  int i;
+  
+  // Line comment.
+  puts("Hello world!");
+  
+  for (i = 0; i < N; i++) {
+    puts("LaTeX is also great for programmers!");
+  }
+  
+  return 0;
+}
+\end{lstlisting}
+
+\subsection{A graph}
+To achieve best quality, you should always insert vectorised figures. This can be achieved with figures exported from Matlab or hand-drawn in Adobe Illustrator, Inkscape, or Corel Draw. A detail tutorial is available at \verb|https://www.io.ac.nz/blog/matlab-to-latex/|. For an example, have a look at Fig. \ref{fig:elc}. The whole figure is plotted in Matlab, then Inkscape separate the graph part (lines and curves...) to a \verb|pdf| file and the text part to a \verb|pdf_tex| file, so that the text is actually rendered by Latex to maintain consistency in the document.
+
+
+\begin{figure}[!h]
+  \def\svgwidth{\linewidth}
+  \small
+  \input{figures/equal-loudness-contour.pdf_tex}
+  \caption[Equal-loudness-contour]{Equal loudness contour according to ISO 226:2003}
+  \label{fig:elc}
+\end{figure}
+
+
+\subsection{Two graphs, side by side}
+Figure \ref{fig:fig3} shows two subfigure side by side, The total width span one whole line, with the first figure occupies 47.5\% total width and pushed all the way to the left, the second figure occupies 47.5\% total width and pushed all the way to the right, the space between them is 5\% total width. You can cite the subfigures independent from the whole figure, like this: \verb|\ref{fig:fig3a}| (to get \ref{fig:fig3a}), or just the subfigure's part of the reference number, like this: \verb|\subref{fig:fig3a}| (to get \subref{fig:fig3a})
+
+\noindent
+\begin{figure}[!h]
+  \begin{subfigure}[b]{.5\linewidth}
+    \raggedright\footnotesize
+    \def\svgwidth{.95\linewidth}
+    \input{figures/dtw_euclidean.pdf_tex}
+    \caption{Distance calculated by a $\ell_p$-norm is performed on a linear element-wise basis.}
+    \label{fig:fig3a}
+  \end{subfigure}%
+  \begin{subfigure}[b]{.5\linewidth}
+    \raggedleft\footnotesize
+    \def\svgwidth{.95\linewidth}
+    \input{figures/dtw_dtw.pdf_tex}
+    \caption{Distance calculated by a DTW is performed on a warped path.}
+    \label{fig:fig3b}
+  \end{subfigure}
+  \caption[Illustration of $\ell_p$-norm distance and DTW distance]{The alignment of elements for measuring distance between two sequences A (top blue line) and B (bottom black line) by \subref{fig:fig3a}) $\ell_p$-norm distances and \subref{fig:fig3b}) DTW. Red dots are where the warping occurs.}
+  \label{fig:fig3}
+\end{figure}
+
+\lipsum[3]
+
+\subsection{Figure wrapped by text}
+\begin{wrapfigure}{r}{.5\textwidth}
+  \vspace{-20pt}
+  \raggedright
+  \footnotesize
+  \def\svgwidth{\linewidth}
+  \input{figures/sequences-with-no-complete-match.pdf_tex}
+  \caption{Matching sequences that have non-correspondent segment.}
+  \label{fig:fig4}
+  \vspace{-10pt}
+\end{wrapfigure}
+%
+\lipsum[2]
+
